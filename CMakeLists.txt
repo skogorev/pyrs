@@ -32,9 +32,9 @@ include_directories(
         ${3RDPARTY_DIR}/vc_vector
         ${3RDPARTY_DIR}/json-parser)
 
-add_executable(Pyrs ${PYRS_SOURCES})
+add_executable(pyrs ${PYRS_SOURCES})
 
-target_link_libraries(Pyrs
+target_link_libraries(pyrs
         ${3RDPARTY_DIR}/lib/libhaywire.a
         ${3RDPARTY_DIR}/lib/libuv.a
         python2.7)
