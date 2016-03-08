@@ -31,7 +31,7 @@ The structure of the pyrs project:
 ```
 
 `project.pyrs` example:
-```json
+```
 {
   "http_listen_address": "127.0.0.1", /* [optional]. Default is "0.0.0.0" */
   "http_listen_port": 8000, /* [optional]. Default is "8094" */
