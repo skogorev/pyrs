@@ -12,7 +12,7 @@ cd haywire
 cp build/libhaywire.a ../lib/
 cp -R include/ ../include
 cp -R lib/libuv/.libs/ ../lib/
-cp -R lib/libuv/.libs/include/ ../include
+cp -R lib/libuv/include/ ../include
 cd ..
 
 cd ..
