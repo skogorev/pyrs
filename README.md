@@ -3,7 +3,8 @@ Asynchronous HTTP server (written in C) with Python handlers.
 
 ### Project examples
 
-- [Echo server](https://github.com/skogorev/pyrs/tree/master/ProjectTemplate)
+- [Echo server](https://github.com/skogorev/pyrs/tree/master/examples/echo)
+- [Yandex En-Fr translator server](https://github.com/skogorev/pyrs/tree/master/examples/en_fr_translator)
 
 ## Building
 
@@ -16,7 +17,7 @@ Asynchronous HTTP server (written in C) with Python handlers.
 Coming soon
 
 ## Project creation
-[template example](https://github.com/skogorev/pyrs/tree/master/ProjectTemplate)
+[template example](https://github.com/skogorev/pyrs/tree/master/project_template)
 
 The structure of the pyrs project:
 ```

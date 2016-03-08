@@ -1,0 +1,20 @@
+{
+	"http_listen_address": "0.0.0.0",
+	"http_listen_port": 8094,
+
+	"modules": [
+		{
+			"path": "/translate",
+			"module": "translator",
+			"class": "Translator",
+			"handler": "translate_request"
+		},
+
+		{
+			"path": "/*",
+			"module": "translator",
+			"class": "Translator",
+			"handler": "default_request"
+		}
+	]
+}
