@@ -10,8 +10,8 @@ class Translator:
         url = self.api_url + "?key=" + self.key + "&text=" + request + "&lang=en-fr"
         tr = urllib2.urlopen(url).read()
         js = json.loads(tr)
-        tr = js["text"]
-        return str(tr)
+        tr = js["text"][0]
+        return tr
       except:
         return "Failed"
 

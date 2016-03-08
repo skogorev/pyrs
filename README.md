@@ -16,6 +16,10 @@ Asynchronous HTTP server (written in C) with Python handlers.
 ### Windows
 Coming soon
 
+#### Requirements
+* cmake
+* python2.7
+
 ## Project creation
 [template example](https://github.com/skogorev/pyrs/tree/master/project_template)
 
