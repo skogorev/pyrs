@@ -21,7 +21,7 @@ typedef struct {
   PyObject* py_instance;
 } pyrs_py_module;
 
-void pyrs_py_module_global_init();
+void pyrs_py_module_global_init(const char* project_dir);
 void pyrs_py_module_global_release();
 
 pyrs_py_module* pyrs_py_module_create(pyrs_config_module* conf);

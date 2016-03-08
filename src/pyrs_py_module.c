@@ -1,13 +1,13 @@
 #include "pyrs_py_module.h"
 
-void pyrs_py_module_global_init() {
+void pyrs_py_module_global_init(const char* project_dir) {
+  setenv("PYTHONPATH", project_dir, 0);
   Py_Initialize();
 }
 
 void pyrs_py_module_global_release() {
   Py_Finalize();
 }
-
 
 pyrs_py_module* pyrs_py_module_create(pyrs_config_module* conf) {
   pyrs_py_module* m = (pyrs_py_module*)malloc(sizeof(pyrs_py_module));

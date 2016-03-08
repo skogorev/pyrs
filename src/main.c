@@ -4,7 +4,7 @@
 
 int main(int argc, char* argv[]) {
   if (argc < 2) {
-    fprintf(stderr, "Usage: \"%s CONFIG_FILE\"\n", basename(argv[0]));
+    fprintf(stderr, "Usage: \"%s PROJECT_FILE\"\n", basename(argv[0]));
     return 1;
   }
   
@@ -28,7 +28,7 @@ int main(int argc, char* argv[]) {
     return 1;
   }
   
-  pyrs_py_module_global_init();
+  pyrs_py_module_global_init(dirname(argv[1]));
   
   for (int i = 0; i < config->modules.count; ++i) {
     pyrs_py_module* module = pyrs_py_module_create(config->modules.data + i);
