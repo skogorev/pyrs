@@ -1,6 +1,10 @@
 # pyrs
 Asynchronous HTTP server (written in C) with Python handlers.
 
+### Project examples
+
+- [Echo server](https://github.com/skogorev/pyrs/tree/master/ProjectTemplate)
+
 ## Building
 
 ### Linux and OSX
@@ -24,19 +28,19 @@ The structure of the pyrs project:
 `project.pyrs` example:
 ```json
 {
-  "http_listen_address": "127.0.0.1", // [optional]. Default is "0.0.0.0"
-  "http_listen_port": 8000, // [optional]. Default is "8094"
-  "thread_count": 2, // [optional]. Default is "2"
-  "tcp_nodelay": false, // [optional]. Default is "false"
-  "listen_backlog": 1, // [optional]. The maximum length to which the queue of pending may grow. Default is "10"
+  "http_listen_address": "127.0.0.1", /* [optional]. Default is "0.0.0.0" */
+  "http_listen_port": 8000, /* [optional]. Default is "8094" */
+  "thread_count": 2, /* [optional]. Default is "2" */
+  "tcp_nodelay": false, /* [optional]. Default is "false" */
+  "listen_backlog": 1, /* [optional]. The maximum length to which the queue of pending may grow. Default is "10" */
 
-  "modules": [ // Python handlers
+  "modules": [ /* Python handlers */
 
     {
-      "path": "/echo", // handlers for http://url:port/echo
-      "module": "main", // name of python module
-      "class": "Api", // class name
-      "handler": "echo_request" // handler method name
+      "path": "/echo", /* handlers for http://url:port/echo */
+      "module": "main", /* name of python module */
+      "class": "Api", /* class name */
+      "handler": "echo_request" /* handler method name */
     },
 
     {

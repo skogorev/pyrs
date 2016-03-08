@@ -52,7 +52,7 @@ pyrs_py_res pyrs_py_module_call(pyrs_py_module* module, char* request) {
   res.py_res = PyObject_CallMethod(module->py_instance, module->handler_name, "s", request ? request : "");
   if (res.py_res) {
     res.data = PyBytes_AsString(res.py_res);
-    if (res.data) {
+    if (res.data != NULL) {
       res.len = strlen(res.data);
     }
   }
