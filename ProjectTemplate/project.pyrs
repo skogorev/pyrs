@@ -1,0 +1,30 @@
+{
+	"http_listen_address": "0.0.0.0",
+	"http_listen_port": 8094,
+	"thread_count": 2,
+
+	"modules": [
+
+		{
+			"path": "/echo",
+			"module": "main",
+			"class": "Api",
+			"handler": "echo_request"
+		},
+
+		{
+			"path": "/hello",
+			"module": "main",
+			"class": "Api",
+			"handler": "hello_request"
+		},
+
+		{
+			"path": "/*",
+			"module": "main",
+			"class": "Api",
+			"handler": "default_request"
+		}
+
+	]
+}
