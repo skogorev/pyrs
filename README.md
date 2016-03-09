@@ -104,6 +104,46 @@ $ curl -X POST -d "hello" http://127.0.0.1:8094/echo
 hello
 ```
 
+## Benchmarks
+OSX. 3 GHz Intel Core i7. 8 GB 1600 MHz DDR3
+
+[haywire benchmark test](https://github.com/haywire/haywire/tree/a82784b9c2cf2a4b71157697315a28535c873abc/benchmark) ***without using python handlers***
+```
+$ wrk --script ./pipelined_get.lua --latency -d 30s -t 8 -c 32 http://127.0.0.1:8094 -- 64
+Running 30s test @ http://127.0.0.1:8094
+  8 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     9.21ms    6.96ms  72.08ms   67.88%
+    Req/Sec    24.26k    28.92k  121.92k    88.18%
+  Latency Distribution
+     50%    8.95ms
+     75%   14.15ms
+     90%   20.72ms
+     99%    0.00us
+  5783416 requests in 30.08s, 0.88GB read
+  Non-2xx or 3xx responses: 5783416
+Requests/sec: 192282.04
+Transfer/sec:     29.89MB
+```
+test ***pyrs server*** with [echo python handler](https://github.com/skogorev/pyrs/tree/master/examples/echo)
+```
+$ wrk --script ./pipelined_get.lua --latency -d 30s -t 8 -c 32 http://127.0.0.1:8094 -- 64
+Running 30s test @ http://127.0.0.1:8094
+  8 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     7.79ms    6.21ms  56.99ms   72.48%
+    Req/Sec    23.37k    15.39k   99.84k    76.47%
+  Latency Distribution
+     50%    6.97ms
+     75%   12.14ms
+     90%   18.72ms
+     99%    0.00us
+  5586251 requests in 30.09s, 868.38MB read
+  Non-2xx or 3xx responses: 5586251
+Requests/sec: 185625.24
+Transfer/sec:     28.86MB
+```
+
 ## 3rdparty
 * [haywire](https://github.com/haywire/haywire)
 * [json-parser](https://github.com/udp/json-parser)
